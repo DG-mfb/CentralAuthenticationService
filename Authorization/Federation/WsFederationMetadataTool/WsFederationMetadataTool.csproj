@@ -60,10 +60,6 @@
       <Project>{681BB5E0-8DB0-44FA-8950-EEF3ADC42745}</Project>
       <Name>UnityResolver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Kernel\Kernel.Configuration\Kernel.Configuration.csproj">
-      <Project>{B78BEABA-813A-4C65-BA17-2207E5F37B66}</Project>
-      <Name>Kernel.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
       <Project>{4C5166B9-A9EC-4AB9-9982-D217DCBEF181}</Project>
       <Name>Kernel.Federation</Name>

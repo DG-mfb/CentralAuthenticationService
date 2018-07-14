@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Kernel.Configuration;
 using Kernel.Initialisation;
 using Kernel.Logging;
 using ServerInitialisation;
@@ -32,7 +31,8 @@ namespace WebApi
                 var container = ApplicationConfiguration.Instance.DependencyResolver;
                 DIRegistration.Register(container);
                 var initialiser = ApplicationConfiguration.Instance.ServerInitialiserFactory();
-                var dataSource = AppSettingsConfigurationManager.GetSetting("dataInitialiser", String.Empty);
+                //ToDo: Review
+                var dataSource = "ORMMetadataContextProvider.Initialisation.ORMMetadataContextProviderInitialiser, ORMMetadataContextProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";//AppSettingsConfigurationManager.GetSetting("dataInitialiser", String.Empty);
                 if(!String.IsNullOrWhiteSpace(dataSource))
                     initialiser.InitialiserTypes.Add(dataSource);
                 var task = initialiser.Initialise(container)

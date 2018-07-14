@@ -96,10 +96,6 @@
     <Folder Include="Federtion\Binging\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Kernel\Kernel.Configuration\Kernel.Configuration.csproj">
-      <Project>{b78beaba-813a-4c65-ba17-2207e5f37b66}</Project>
-      <Name>Kernel.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
       <Project>{4C5166B9-A9EC-4AB9-9982-D217DCBEF181}</Project>
       <Name>Kernel.Federation</Name>

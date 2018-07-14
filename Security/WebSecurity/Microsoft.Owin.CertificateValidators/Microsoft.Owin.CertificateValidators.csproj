@@ -69,7 +69,7 @@
       <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Configuration\Kernel.Configuration.csproj">
-      <Project>{B78BEABA-813A-4C65-BA17-2207E5F37B66}</Project>
+      <Project>{66b33af1-b001-4dcd-9a7b-7c3e88fdf1cc}</Project>
       <Name>Kernel.Configuration</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Security\Kernel.Security.csproj">

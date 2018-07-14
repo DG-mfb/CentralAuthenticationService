@@ -10,7 +10,8 @@ namespace ORMMetadataContextProvider
         public DbCustomConfiguration()
         {
             this.Seeders = new List<ISeeder>();
-            this.Schema = AppSettingsConfigurationManager.GetSetting("ssoSchema", "dbo");
+            //ToDo: Review
+            this.Schema = "dbo";//AppSettingsConfigurationManager.GetSetting("ssoSchema", "dbo");
         }
         public ICollection<ISeeder> Seeders { get; }
 

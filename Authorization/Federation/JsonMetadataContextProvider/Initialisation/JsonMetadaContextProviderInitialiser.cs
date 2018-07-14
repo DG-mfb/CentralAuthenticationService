@@ -30,20 +30,22 @@ namespace JsonMetadataContextProvider.Initialisation
             dependencyResolver.RegisterType<JsonAuthorizationServerConfigurationManager>(Lifetime.Transient);
             dependencyResolver.RegisterFactory<Func<Type,string>>(() => t =>
             {
-                string path = null;
-                if(t == typeof(FederationPartyContextBuilder))
-                    path = AppSettingsConfigurationManager.GetSetting("federationConfigurationFile", String.Empty);
-                if (t == typeof(CertificateValidationConfigurationProvider))
-                    path = AppSettingsConfigurationManager.GetSetting("securityConfigurationFile", String.Empty);
-                if (t == typeof(JsonAuthorizationServerConfigurationManager))
-                    path = AppSettingsConfigurationManager.GetSetting("authorizationServerConfiguration", String.Empty);
-                if (String.IsNullOrWhiteSpace(path))
-                    throw new NotSupportedException("Unsupported type");
+                //ToDo: Review
+                throw new NotImplementedException();
+                //string path = null;
+                //if(t == typeof(FederationPartyContextBuilder))
+                //    path = AppSettingsConfigurationManager.GetSetting("federationConfigurationFile", String.Empty);
+                //if (t == typeof(CertificateValidationConfigurationProvider))
+                //    path = AppSettingsConfigurationManager.GetSetting("securityConfigurationFile", String.Empty);
+                //if (t == typeof(JsonAuthorizationServerConfigurationManager))
+                //    path = AppSettingsConfigurationManager.GetSetting("authorizationServerConfiguration", String.Empty);
+                //if (String.IsNullOrWhiteSpace(path))
+                //    throw new NotSupportedException("Unsupported type");
 
-                using (var reader = new StreamReader(path))
-                {
-                    return reader.ReadToEnd();
-                }
+                //using (var reader = new StreamReader(path))
+                //{
+                //    return reader.ReadToEnd();
+                //}
             }, Lifetime.Singleton);
             return Task.CompletedTask;
         }

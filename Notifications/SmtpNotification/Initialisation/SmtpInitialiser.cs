@@ -15,7 +15,8 @@ namespace SmtpNotification.Initialisation
         {
             dependencyResolver.RegisterType<SmtpSender>(Lifetime.Transient);
             dependencyResolver.RegisterType<SmtpNotifier>(Lifetime.Transient);
-            dependencyResolver.RegisterType<SmtpDestinationTargetProvider>(Lifetime.Transient);
+            //ToDo: Review
+            //dependencyResolver.RegisterType<SmtpDestinationTargetProvider>(Lifetime.Transient);
             return Task.CompletedTask;
         }
     }

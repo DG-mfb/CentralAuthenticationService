@@ -53,13 +53,8 @@
     <Compile Include="Notification\ISmptServer.cs" />
     <Compile Include="Notification\NotificationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\ExceptionNotificationSettingsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Kernel.Configuration\Kernel.Configuration.csproj">
-      <Project>{b78beaba-813a-4c65-ba17-2207e5f37b66}</Project>
-      <Name>Kernel.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Kernel.Reflection\Kernel.Reflection.csproj">
       <Project>{05DE06E5-C85B-4752-BEAE-002B92CA224E}</Project>
       <Name>Kernel.Reflection</Name>
@@ -68,6 +63,9 @@
       <Project>{A445B83F-A70E-4C45-B4A1-2A8AB696FA6B}</Project>
       <Name>Kernel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Providers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

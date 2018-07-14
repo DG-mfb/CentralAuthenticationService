@@ -11,17 +11,19 @@ namespace SmtpNotification
 
         public SmtpSender(ISmptServer destinationTargetProvider)
         {
-            _destinationTargetProvider = destinationTargetProvider;
+            //ToDo: Review
+            throw new NotImplementedException();
+            //_destinationTargetProvider = destinationTargetProvider;
 
-            var spBase = _destinationTargetProvider as SettingsProviderBase;
+            //var spBase = _destinationTargetProvider as SettingsProviderBase;
 
-            if (spBase == null)
-                throw new InvalidCastException("SettingsProviderBase");
+            //if (spBase == null)
+            //    throw new InvalidCastException("SettingsProviderBase");
 
-            if (spBase.HasError)
-                throw spBase.Error;
+            //if (spBase.HasError)
+            //    throw spBase.Error;
 
-            Init();
+            //Init();
         }
 
         public IDestinationTargetProvider DestinationTarget

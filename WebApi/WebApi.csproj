@@ -181,10 +181,6 @@
       <Project>{4D83CD86-3A8E-4501-B8A7-7989CD71EDF1}</Project>
       <Name>Kernel.Authorisation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Kernel\Kernel.Configuration\Kernel.Configuration.csproj">
-      <Project>{B78BEABA-813A-4C65-BA17-2207E5F37B66}</Project>
-      <Name>Kernel.Configuration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
       <Project>{4C5166B9-A9EC-4AB9-9982-D217DCBEF181}</Project>
       <Name>Kernel.Federation</Name>
