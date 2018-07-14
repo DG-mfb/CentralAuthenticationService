@@ -7,7 +7,6 @@
     using System.Linq;
     using Kernel.Configuration;
     using Kernel.Configuration.Notification;
-    using Kernel.Logging;
     using Kernel.Notification.Exceptions;
     using Kernel.Reflection;
 
@@ -112,15 +111,16 @@
 
                     var timer = new Stopwatch();
 
-                    LoggerManager.WriteInformationToEventLog("Loading all exceptions...");
+                //ToDo: review
+                //LoggerManager.WriteInformationToEventLog("Loading all exceptions...");
 
-                    timer.Start();
+                timer.Start();
 
                     var dict = types.ToDictionary(k => k.FullName);
 
                     timer.Stop();
-
-                    LoggerManager.WriteInformationToEventLog(string.Format("Loading all exceptions took {0}", timer.Elapsed));
+                //ToDo: review
+                //LoggerManager.WriteInformationToEventLog(string.Format("Loading all exceptions took {0}", timer.Elapsed));
 
 
                 foreach (ExceptionNotificationSettingsConfigurationElement setting in section.ExceptionNotificationSettings)
@@ -133,8 +133,8 @@
                     if (!ReflectionHelper.TryParseOrDefault<double>(setting.TimeSpan, out minutes))
                     {
                         _validationResult.Add(new ValidationResult(string.Format("Configuration setting TimeSpan for {0} is not numerical. Value is {1}.", setting.Name, setting.TimeSpan)));
-
-                        LoggerManager.WriteWarningToEventLog(string.Format("Configuration setting TimeSpan for {0} is not numerical. Value is {1}.", setting.Name, setting.TimeSpan));
+                        //ToDo: review
+                        //LoggerManager.WriteWarningToEventLog(string.Format("Configuration setting TimeSpan for {0} is not numerical. Value is {1}.", setting.Name, setting.TimeSpan));
 
                         continue;
                     }
@@ -156,8 +156,8 @@
             catch (Exception ex)
             {
                 _error = ex;
-
-                LoggerManager.WriteExceptionToEventLog(ex);
+                //ToDo: review
+                //LoggerManager.WriteExceptionToEventLog(ex);
             }
             finally
             {
@@ -174,7 +174,7 @@
         {
             if (!string.IsNullOrWhiteSpace(emailConfiguration.From))
                 _emailMessage.From = emailConfiguration.From;
-            
+
             if (!string.IsNullOrWhiteSpace(emailConfiguration.BCC))
                 _emailMessage.Bcc = emailConfiguration.BCC.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
 

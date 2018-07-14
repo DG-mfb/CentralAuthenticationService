@@ -21,7 +21,7 @@
 			if (disposing)
 			{
 				this.Timer.Stop();
-				LoggerManager.WriteWarningToEventLog(String.Format("{0} exited. Time Elapsed: {1}", this.MethodName, this.Timer.Elapsed));
+				//LoggerManager.WriteWarningToEventLog(String.Format("{0} exited. Time Elapsed: {1}", this.MethodName, this.Timer.Elapsed));
 			}
 		}
 	}

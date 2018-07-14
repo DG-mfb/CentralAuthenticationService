@@ -33,7 +33,8 @@ namespace Federation.Protocols.Tokens.Validation
             catch (Exception ex)
             {
                 validationResult.Add(new ValidationResult(ex.Message));
-                LoggerManager.WriteExceptionToEventLog(ex);
+                //ToDo: review
+                //LoggerManager.WriteExceptionToEventLog(ex);
                 return false;
             }
         }

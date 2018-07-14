@@ -149,7 +149,7 @@
       <Name>Kernel.Federation</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Logging\Kernel.Logging.csproj">
-      <Project>{7DA939D6-5443-498F-AAA1-3CE3134BC3EB}</Project>
+      <Project>{3E8F0EF7-0A11-4DF6-BE70-22723E7FD06C}</Project>
       <Name>Kernel.Logging</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Reflection\Kernel.Reflection.csproj">

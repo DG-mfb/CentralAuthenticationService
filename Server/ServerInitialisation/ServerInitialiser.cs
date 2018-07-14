@@ -103,8 +103,9 @@ namespace ServerInitialisation
 					}
 					catch (Exception ex)
 					{
-						LoggerManager.WriteExceptionToEventLog(ex);
-						exceptions.Enqueue(ex);
+                        //ToDo: review
+                        //LoggerManager.WriteExceptionToEventLog(ex);
+                        exceptions.Enqueue(ex);
 					}
 				}
 			};

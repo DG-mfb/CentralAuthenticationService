@@ -15,7 +15,7 @@
 		public InformationLogEventWriter([CallerMemberName] string methodName = "")
         {
 			this.MethodName = methodName;
-			LoggerManager.WriteInformationToEventLog(String.Format("{0} entered.", this.MethodName));
+			//LoggerManager.WriteInformationToEventLog(String.Format("{0} entered.", this.MethodName));
 			this.Timer.Reset();
 			this.Timer.Start();
         }
@@ -31,7 +31,7 @@
 			if (disposing)
 			{
 				this.Timer.Stop();
-				LoggerManager.WriteInformationToEventLog(String.Format("{0} exited. Time Elapsed: {1}", this.MethodName, this.Timer.Elapsed));
+				//LoggerManager.WriteInformationToEventLog(String.Format("{0} exited. Time Elapsed: {1}", this.MethodName, this.Timer.Elapsed));
 			}
 		}
 	}

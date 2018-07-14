@@ -7,8 +7,9 @@ namespace Federation.Logging
     {
         public override void WriteExeption(object o)
         {
-            if (o is Exception)
-                LoggerManager.WriteExceptionToEventLog((Exception)o);
+            //ToDo: Implement logging
+            //if (o is Exception)
+            //    LoggerManager.WriteExceptionToEventLog((Exception)o);
         }
     }
 }

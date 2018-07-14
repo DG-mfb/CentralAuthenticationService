@@ -112,7 +112,8 @@ namespace SmtpNotification
 
                     if (string.IsNullOrWhiteSpace(settingValue))
                     {
-                        LoggerManager.WriteWarningToEventLog("Path cannot be empty");
+                        //ToDo: review
+                        //LoggerManager.WriteWarningToEventLog("Path cannot be empty");
 
                         _validationResult.Add(new ValidationResult("Path cannot be empty"));
                     }
@@ -131,8 +132,8 @@ namespace SmtpNotification
                     if (!ReflectionHelper.TryParseOrDefault<int>(settingValue, out portNumeric))
                     {
                         _validationResult.Add(new ValidationResult(string.Format("Port setting is not numerical. Value is {0}", settingValue)));
-
-                        LoggerManager.WriteWarningToEventLog(string.Format("Port setting is not numerical. Value is {0}", settingValue));
+                        //ToDo: review
+                        ///LoggerManager.WriteWarningToEventLog(string.Format("Port setting is not numerical. Value is {0}", settingValue));
                     }
                     else
                         _port = portNumeric;
@@ -145,8 +146,8 @@ namespace SmtpNotification
                     if (!ReflectionHelper.TryParseOrDefault<bool>(settingValue, out _isSSLEnabled))
                     {
                         _validationResult.Add(new ValidationResult(string.Format("Port setting is not numerical. Value is {0}", settingValue)));
-
-                        LoggerManager.WriteWarningToEventLog(string.Format("Port setting is not numerical. Value is {0}", settingValue));
+                        //ToDo: review
+                        //LoggerManager.WriteWarningToEventLog(string.Format("Port setting is not numerical. Value is {0}", settingValue));
                     }
                 }
 
@@ -156,14 +157,16 @@ namespace SmtpNotification
 
                     if (string.IsNullOrWhiteSpace(settingValue))
                     {
-                        LoggerManager.WriteWarningToEventLog("UserName cannot be empty");
+                        //ToDo: review
+                        //LoggerManager.WriteWarningToEventLog("UserName cannot be empty");
 
                         _validationResult.Add(new ValidationResult("UserName cannot be empty"));
                     }
                     else
                         if (!EmailValidator.ValidateEmail(settingValue))
                     {
-                        LoggerManager.WriteWarningToEventLog(string.Format("UserName is not a valid e-mail format. Value is {0}", settingValue));
+                        //ToDo: review
+                        //LoggerManager.WriteWarningToEventLog(string.Format("UserName is not a valid e-mail format. Value is {0}", settingValue));
 
                         _validationResult.Add(new ValidationResult(string.Format("UserName is not a valid e-mail format. Value is {0}", settingValue)));
                     }
@@ -192,7 +195,8 @@ namespace SmtpNotification
             {
                 _error = ex;
 
-                LoggerManager.WriteExceptionToEventLog(ex);
+                //ToDo: review
+                //LoggerManager.WriteExceptionToEventLog(ex);
             }
             finally
             {
