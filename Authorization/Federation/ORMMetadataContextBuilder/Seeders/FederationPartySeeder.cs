@@ -25,29 +25,29 @@ namespace ORMMetadataContextProvider.Seeders
             
             var authnRequestSettings = this.GetAutnRequestSettings();
 
-            var imperialFederationParty = new FederationPartySettings
-            {
-                RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
-                AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-                MetadataPath = "https://shibboleth.imperial.ac.uk/idp/shibboleth",
-                MetadataLocation = "HTTP",
-                FederationPartyId = "imperial.ac.uk"
-            };
-            imperialFederationParty.MetadataSettings = metadata;
-            imperialFederationParty.SecuritySettings = security;
-            imperialFederationParty.AutnRequestSettings = authnRequestSettings;
+            //var imperialFederationParty = new FederationPartySettings
+            //{
+            //    RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
+            //    AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
+            //    MetadataPath = "https://shibboleth.imperial.ac.uk/idp/shibboleth",
+            //    MetadataLocation = "HTTP",
+            //    FederationPartyId = "imperial.ac.uk"
+            //};
+            //imperialFederationParty.MetadataSettings = metadata;
+            //imperialFederationParty.SecuritySettings = security;
+            //imperialFederationParty.AutnRequestSettings = authnRequestSettings;
             //ECA-international
-            var atlasFederationParty = new FederationPartySettings
-            {
-                RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
-                AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-                MetadataPath = @"file://D:\Dan\Software\ECA-Interenational\Metadata\atlasCopco\federation_metadata.xml",
-                MetadataLocation = "HTTP",
-                FederationPartyId = "atlasCopco"
-            };
-            atlasFederationParty.MetadataSettings = metadata;
-            atlasFederationParty.SecuritySettings = security;
-            atlasFederationParty.AutnRequestSettings = authnRequestSettings;
+            //var atlasFederationParty = new FederationPartySettings
+            //{
+            //    RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
+            //    AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
+            //    MetadataPath = @"file://D:\Dan\Software\ECA-Interenational\Metadata\atlasCopco\federation_metadata.xml",
+            //    MetadataLocation = "HTTP",
+            //    FederationPartyId = "atlasCopco"
+            //};
+            //atlasFederationParty.MetadataSettings = metadata;
+            //atlasFederationParty.SecuritySettings = security;
+            //atlasFederationParty.AutnRequestSettings = authnRequestSettings;
 
             //shibboleth test metadata settings
             var testFederationParty = new FederationPartySettings
@@ -56,54 +56,54 @@ namespace ORMMetadataContextProvider.Seeders
                 AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
                 MetadataPath = "https://www.testshib.org/metadata/testshib-providers.xml",
                 MetadataLocation = "HTTP",
-                FederationPartyId = "testShib"
+                FederationPartyId = "local"
             };
             testFederationParty.MetadataSettings = metadata;
             testFederationParty.SecuritySettings = security;
             testFederationParty.AutnRequestSettings = authnRequestSettings;
 
             //local
-            var localFederationParty = new FederationPartySettings
-            {
-                RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
-                AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-                MetadataPath = "https://dg-mfb/idp/shibboleth",
-                MetadataLocation = "HTTP",
-                FederationPartyId = "local"
-            };
-            localFederationParty.MetadataSettings = metadata;
-            localFederationParty.SecuritySettings = security;
-            localFederationParty.AutnRequestSettings = authnRequestSettings;
+            //var localFederationParty = new FederationPartySettings
+            //{
+            //    RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
+            //    AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
+            //    MetadataPath = "https://dg-mfb/idp/shibboleth",
+            //    MetadataLocation = "HTTP",
+            //    FederationPartyId = "local"
+            //};
+            //localFederationParty.MetadataSettings = metadata;
+            //localFederationParty.SecuritySettings = security;
+            //localFederationParty.AutnRequestSettings = authnRequestSettings;
 
             //local identity provider
-            var localIdp = new FederationPartySettings
-            {
-                RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
-                AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-                MetadataPath = "https://localhost:44342/idp/metadata",
-                MetadataLocation = "HTTP",
-                FederationPartyId = "localIdp"
-            };
-            localIdp.MetadataSettings = metadata;
-            localIdp.SecuritySettings = security;
-            localIdp.AutnRequestSettings = authnRequestSettings;
+            //var localIdp = new FederationPartySettings
+            //{
+            //    RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
+            //    AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
+            //    MetadataPath = "https://localhost:44342/idp/metadata",
+            //    MetadataLocation = "HTTP",
+            //    FederationPartyId = "localIdp"
+            //};
+            //localIdp.MetadataSettings = metadata;
+            //localIdp.SecuritySettings = security;
+            //localIdp.AutnRequestSettings = authnRequestSettings;
 
-            context.Add<FederationPartySettings>(imperialFederationParty);
+            //context.Add<FederationPartySettings>(imperialFederationParty);
             context.Add<FederationPartySettings>(testFederationParty);
-            context.Add<FederationPartySettings>(localFederationParty);
-            context.Add<FederationPartySettings>(atlasFederationParty);
+            //context.Add<FederationPartySettings>(localFederationParty);
+            //context.Add<FederationPartySettings>(atlasFederationParty);
 
-            metadata.RelyingParties.Add(imperialFederationParty);
-            metadata.RelyingParties.Add(localFederationParty);
+            //metadata.RelyingParties.Add(imperialFederationParty);
+            //metadata.RelyingParties.Add(localFederationParty);
             metadata.RelyingParties.Add(testFederationParty);
-            metadata.RelyingParties.Add(localIdp);
-            metadata.RelyingParties.Add(atlasFederationParty);
+            //metadata.RelyingParties.Add(localIdp);
+            //metadata.RelyingParties.Add(atlasFederationParty);
 
-            security.RelyingParties.Add(imperialFederationParty);
-            security.RelyingParties.Add(localFederationParty);
+            //security.RelyingParties.Add(imperialFederationParty);
+            //security.RelyingParties.Add(localFederationParty);
             security.RelyingParties.Add(testFederationParty);
-            security.RelyingParties.Add(localIdp);
-            security.RelyingParties.Add(atlasFederationParty);
+            //security.RelyingParties.Add(localIdp);
+            //security.RelyingParties.Add(atlasFederationParty);
         }
 
         private AutnRequestSettings GetAutnRequestSettings()

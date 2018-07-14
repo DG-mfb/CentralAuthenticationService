@@ -13,7 +13,7 @@ namespace ORMMetadataContextProvider.Seeders
             {
                 IsDefault = true,
                 Use = Kernel.Federation.MetaData.Configuration.Cryptography.KeyUsage.Signing,
-                CetrificateStore = "TestCertStore",
+                CetrificateStore = "My",
                 StoreLocation = StoreLocation.LocalMachine
             };
             var storeCriterion = new StoreSearchCriterion
@@ -25,7 +25,7 @@ namespace ORMMetadataContextProvider.Seeders
             {
                 IsDefault = true,
                 Use = Kernel.Federation.MetaData.Configuration.Cryptography.KeyUsage.Encryption,
-                CetrificateStore = "TestCertStore",
+                CetrificateStore = "My",
                 StoreLocation = StoreLocation.LocalMachine
             };
             var encryptionStoreCriterion = new StoreSearchCriterion
