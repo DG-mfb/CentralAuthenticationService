@@ -55,7 +55,7 @@
       <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Cache\Kernel.Cache.csproj">
-      <Project>{5a1d47f4-b15f-4f42-8eaf-24f1474fe503}</Project>
+      <Project>{E135653F-F334-42AA-B154-E2B5B7FBC588}</Project>
       <Name>Kernel.Cache</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel\Kernel.csproj">

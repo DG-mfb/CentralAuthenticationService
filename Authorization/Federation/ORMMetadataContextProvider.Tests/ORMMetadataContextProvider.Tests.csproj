@@ -66,7 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Cache\Kernel.Cache.csproj">
-      <Project>{5A1D47F4-B15F-4F42-8EAF-24F1474FE503}</Project>
+      <Project>{E135653F-F334-42AA-B154-E2B5B7FBC588}</Project>
       <Name>Kernel.Cache</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Cryptography\Kernel.Cryptography.csproj">
