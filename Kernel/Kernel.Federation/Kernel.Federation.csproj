@@ -1,193 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47FE8E9F-CCF6-46B7-BA75-CBA1D1F56D7A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kernel.Federation</RootNamespace>
-    <AssemblyName>Kernel.Federation</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.IdentityModel" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="Protocols\IAuthnRequestBuilder.cs" />
+    <Compile Remove="Protocols\IBindingHandler%271.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Audience\AudienceUriMode.cs" />
-    <Compile Include="Constants\AuthnticationContexts.cs" />
-    <Compile Include="Constants\HttpRedirectBindingConstants.cs" />
-    <Compile Include="Constants\NameIdentifierFormats.cs" />
-    <Compile Include="Constants\ProtocolBindings.cs" />
-    <Compile Include="Constants\Reasons.cs" />
-    <Compile Include="Constants\RelayStateContstants.cs" />
-    <Compile Include="Constants\Saml20Constants.cs" />
-    <Compile Include="Constants\StatusCodes.cs" />
-    <Compile Include="Constants\SubjectConfirmationMethods.cs" />
-    <Compile Include="FederationPartner\RequestConfiguration.cs" />
-    <Compile Include="Authorization\AuthorizationServerConfiguration.cs" />
-    <Compile Include="Exceptions\AudienceRestrictionException.cs" />
-    <Compile Include="Exceptions\FederationException.cs" />
-    <Compile Include="Exceptions\TimeRestrictionViolationException.cs" />
-    <Compile Include="FederationPartner\AuthnRequestConfiguration.cs" />
-    <Compile Include="FederationPartner\DefaultNameId.cs" />
-    <Compile Include="FederationPartner\FederationPartyAuthnRequestConfiguration.cs" />
-    <Compile Include="FederationPartner\IDiscoveryService.cs" />
-    <Compile Include="FederationPartner\IFederationPartyContextBuilder.cs" />
-    <Compile Include="FederationPartner\IDiscoveryService%271.cs" />
-    <Compile Include="FederationPartner\IRelyingPartyContextBuilder.cs" />
-    <Compile Include="FederationPartner\ScopingConfiguration.cs" />
-    <Compile Include="FederationPartner\RequestedAuthnContextConfiguration.cs" />
-    <Compile Include="Identity\Claims\FederatiionPartyClaimTypes.cs" />
-    <Compile Include="Identity\Claims\IClaimTypesProvider.cs" />
-    <Compile Include="Identity\Claims\IClaimsResolver.cs" />
-    <Compile Include="MetaData\Configuration\Bindings.cs" />
-    <Compile Include="MetaData\Configuration\IInlineMetadataContextBuilder.cs" />
-    <Compile Include="MetaData\Configuration\IMetadataContextBuilder.cs" />
-    <Compile Include="MetaData\Configuration\RoleDescriptors\IdPSSODescriptorConfiguration.cs" />
-    <Compile Include="MetaData\DispatcherContext.cs" />
-    <Compile Include="MetaData\IFederationMetadataDispatcher.cs" />
-    <Compile Include="MetaData\IMetadataHandler.cs" />
-    <Compile Include="MetaData\IIdPMetadataGenerator.cs" />
-    <Compile Include="MetaData\MetadataGenerateRequest.cs" />
-    <Compile Include="MetaData\MetadataPublicationContext.cs" />
-    <Compile Include="MetaData\MetadataPublicationProtocol.cs" />
-    <Compile Include="Protocols\AuthnContext.cs" />
-    <Compile Include="Protocols\Bindings\IBindingDecoder.cs" />
-    <Compile Include="Protocols\Bindings\IBindingDecode%271r.cs" />
-    <Compile Include="Protocols\ISamlLogoutContextResolver.cs" />
-    <Compile Include="Protocols\SamlInboundMessage.cs" />
-    <Compile Include="Protocols\IMessageTypeResolver.cs" />
-    <Compile Include="Protocols\Request\LogoutRequestContext.cs" />
-    <Compile Include="Protocols\Request\RequestContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpPostBinding\HttpPostContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpPostBinding\ISamlForm.cs" />
-    <Compile Include="Protocols\Bindings\HttpRedirectBinding\HttpRedirectContext.cs" />
-    <Compile Include="Protocols\IPostClauseBuilder.cs" />
-    <Compile Include="Protocols\IRelayStateAppender.cs" />
-    <Compile Include="Protocols\IRedirectClauseBuilder .cs" />
-    <Compile Include="Protocols\BindingContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpPostBinding\HttpPostResponseOutboundContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpPostBinding\HttpPostResponseInboundContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpPostBinding\HttpPostRequestContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpRedirectBinding\HttpRedirectInboundContext.cs" />
-    <Compile Include="Protocols\Bindings\HttpRedirectBinding\HttpRedirectRequestContext.cs" />
-    <Compile Include="Protocols\ISamlRequestClauseBuilder.cs" />
-    <Compile Include="FederationPartner\IAssertionPartyContextBuilder.cs" />
-    <Compile Include="FederationPartner\FederationPartyConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\FileSystemStore.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\KeyDescriptorConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\KeyTarget.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\KeyUsage.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\FileStoreCertificateConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\MetadataSigningContext.cs" />
-    <Compile Include="MetaData\Configuration\Cryptography\X509StoreCertificateConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\EndPoint\EndPointConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\EndPoint\IndexedEndPointConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\IMetadataContextProvider.cs" />
-    <Compile Include="MetaData\Configuration\MetadataContext.cs" />
-    <Compile Include="MetaData\Configuration\IDbMetadataContextBuilder.cs" />
-    <Compile Include="MetaData\Configuration\Organisation\ContactConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\Organisation\ContactType.cs" />
-    <Compile Include="MetaData\Configuration\EntityDescriptors\EntityDesriptorConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\MetadataConfigurationEntry.cs" />
-    <Compile Include="MetaData\Configuration\Organisation\OrganisationConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\Miscellaneous\OtherName.cs" />
-    <Compile Include="MetaData\Configuration\Organisation\ContactPerson.cs" />
-    <Compile Include="MetaData\Configuration\RoleDescriptors\RoleDescriptorConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\RoleDescriptors\SPSSODescriptorConfiguration.cs" />
-    <Compile Include="MetaData\Configuration\RoleDescriptors\SSODescriptorConfiguration.cs" />
-    <Compile Include="MetaData\IDescriptorBuilder.cs" />
-    <Compile Include="MetaData\IMetadataGenerator.cs" />
-    <Compile Include="MetaData\ISPMetadataGenerator.cs" />
-    <Compile Include="MetaData\IMetadataSerialiser.cs" />
-    <Compile Include="MetaData\IFederationMetadataWriter.cs" />
-    <Compile Include="MetaData\MetadataType.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocols\Request\AuthnRequestContext.cs" />
-    <Compile Include="FederationPartner\IConfigurationManager.cs" />
-    <Compile Include="FederationPartner\IConfigurationRetriever.cs" />
-    <Compile Include="Protocols\IRequestSerialiser.cs" />
-    <Compile Include="Protocols\IBindingHandler.cs" />
-    <Compile Include="Protocols\IMessageEncoding.cs" />
-    <Compile Include="Protocols\IProtocolHandler.cs" />
-    <Compile Include="Protocols\IRelayStateHandler.cs" />
-    <Compile Include="Protocols\IRelayStateSerialiser.cs" />
-    <Compile Include="Protocols\ISamlClauseBuilder.cs" />
-    <Compile Include="Protocols\ISamlMessageDespatcher%271.cs" />
-    <Compile Include="Protocols\ISamlMessageDespatcher.cs" />
-    <Compile Include="Protocols\IInboundHandler.cs" />
-    <Compile Include="Protocols\Request\IRequestValidator.cs" />
-    <Compile Include="Protocols\IMessageParser.cs" />
-    <Compile Include="Protocols\Response\IResponseValidator.cs" />
-    <Compile Include="Protocols\SamlLogoutContext.cs" />
-    <Compile Include="Protocols\SamlOutboundContext%271.cs" />
-    <Compile Include="Tokens\HandleTokenContext.cs" />
-    <Compile Include="Tokens\IssuingAuthority.cs" />
-    <Compile Include="Tokens\ITokenClauseValidator.cs" />
-    <Compile Include="Tokens\ITokenHandler.cs" />
-    <Compile Include="Tokens\ITokenConfigurationProvider.cs" />
-    <Compile Include="Tokens\ITokenSerialiser.cs" />
-    <Compile Include="Tokens\ITokenValidator.cs" />
-    <Compile Include="Protocols\SamlProtocolContext.cs" />
-    <Compile Include="Protocols\SamlOutboundContext.cs" />
-    <Compile Include="Protocols\SamlInboundContext.cs" />
-    <Compile Include="Tokens\TokenHandlingResponse.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{06C00FA7-3B59-472B-9C9A-BC4E44BB62FE}</Project>
-      <Name>Kernel.Cryptography</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kernel.Data\Kernel.Data.csproj">
-      <Project>{3CE7FFD5-9F8C-4AF4-9855-67616B4862CC}</Project>
-      <Name>Kernel.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kernel.Security\Kernel.Security.csproj">
-      <Project>{2EFAB4B5-EA19-43D7-AF82-733FFE35CF32}</Project>
-      <Name>Kernel.Security</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kernel.Validation\Kernel.Validation.csproj">
-      <Project>{C15E73AD-29E4-483C-B9E8-88A856AC12A3}</Project>
-      <Name>Kernel.Validation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kernel\Kernel.csproj">
-      <Project>{A445B83F-A70E-4C45-B4A1-2A8AB696FA6B}</Project>
-      <Name>Kernel</Name>
-    </ProjectReference>
-  </ItemGroup>
+
   <ItemGroup>
     <Folder Include="MetaData\Configuration\Discovery\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kernel.Cache\Kernel.Cache.csproj" />
+    <ProjectReference Include="..\Kernel.Cryptography\Kernel.Cryptography.csproj" />
+    <ProjectReference Include="..\Kernel.Security\Kernel.Security.csproj" />
+    <ProjectReference Include="..\Kernel.Validation\Kernel.Validation.csproj" />
+    <ProjectReference Include="..\Kernel\Kernel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.2\System.Security.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
-      <Project>{47FE8E9F-CCF6-46B7-BA75-CBA1D1F56D7A}</Project>
+      <Project>{4C5166B9-A9EC-4AB9-9982-D217DCBEF181}</Project>
       <Name>Kernel.Federation</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Logging\Kernel.Logging.csproj">
