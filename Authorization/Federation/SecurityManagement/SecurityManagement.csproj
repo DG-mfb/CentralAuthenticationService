@@ -68,7 +68,7 @@
       <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{857217F2-B265-4154-883F-568285643238}</Project>
+      <Project>{06C00FA7-3B59-472B-9C9A-BC4E44BB62FE}</Project>
       <Name>Kernel.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Data\Kernel.Data.csproj">

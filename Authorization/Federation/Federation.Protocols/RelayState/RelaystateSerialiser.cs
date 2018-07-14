@@ -21,7 +21,8 @@ namespace Federation.Protocols.RelayState
             this._jsonSerialiser = jsonSerialiser;
             this._encoding = encoding;
             this._logProvider = logProvider;
-            this.DataProtector = new Kernel.Cryptography.DataProtection.DpapiDataProtector("SSO", "saml", "relaystate");
+            //ToDo: implement .net core data protector
+            //this.DataProtector = new Kernel.Cryptography.DataProtection.DpapiDataProtector("SSO", "saml", "relaystate");
         }
         public IDataProtector DataProtector { private get; set; }
         public object[] Deserialize(Stream stream, IList<Type> messageTypes)

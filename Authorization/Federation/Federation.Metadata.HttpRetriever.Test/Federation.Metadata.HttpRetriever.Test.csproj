@@ -59,10 +59,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Kernel\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{857217F2-B265-4154-883F-568285643238}</Project>
-      <Name>Kernel.Cryptography</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Security\Kernel.Security.csproj">
       <Project>{2EFAB4B5-EA19-43D7-AF82-733FFE35CF32}</Project>
       <Name>Kernel.Security</Name>

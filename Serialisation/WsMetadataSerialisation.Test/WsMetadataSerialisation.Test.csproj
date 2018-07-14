@@ -69,10 +69,6 @@
       <Project>{220407EA-E1E1-4BC6-BEC3-3ABFE5070DF5}</Project>
       <Name>WsFederationMetadataProvider</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Kernel\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{857217F2-B265-4154-883F-568285643238}</Project>
-      <Name>Kernel.Cryptography</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
       <Project>{47FE8E9F-CCF6-46B7-BA75-CBA1D1F56D7A}</Project>
       <Name>Kernel.Federation</Name>

@@ -44,7 +44,8 @@ namespace Federation.Protocols.Test.RelayState
             var jsonSerialiser = new NSJsonSerializer(new DefaultSettingsProvider());
             var logger = new LogProviderMock();
             var relayStateSerialiser = new RelaystateSerialiser(jsonSerialiser, messageEncoder, logger);
-            relayStateSerialiser.DataProtector = new Kernel.Cryptography.DataProtection.DpapiDataProtector("SSO", "saml", "relaystate");
+            //ToDo: uncomment the line when .net core data protector has been implemented
+            //relayStateSerialiser.DataProtector = new Kernel.Cryptography.DataProtection.DpapiDataProtector("SSO", "saml", "relaystate");
             var serialiser = relayStateSerialiser as IRelayStateSerialiser;
             
             //ACT

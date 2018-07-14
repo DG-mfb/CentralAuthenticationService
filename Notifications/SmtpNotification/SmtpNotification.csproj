@@ -60,10 +60,6 @@
       <Project>{B78BEABA-813A-4C65-BA17-2207E5F37B66}</Project>
       <Name>Kernel.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Kernel\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{857217F2-B265-4154-883F-568285643238}</Project>
-      <Name>Kernel.Cryptography</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Logging\Kernel.Logging.csproj">
       <Project>{7DA939D6-5443-498F-AAA1-3CE3134BC3EB}</Project>
       <Name>Kernel.Logging</Name>

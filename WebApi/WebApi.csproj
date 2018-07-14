@@ -132,7 +132,6 @@
     <Compile Include="Resolvers\OwinSamlLogoutContextResolver.cs" />
     <Compile Include="Results\CookieRedirectResult.cs" />
     <Compile Include="Token\ClientTokenGrantService.cs" />
-    <Compile Include="Token\MachineKeyDataProtector.cs" />
     <Compile Include="Token\SSOAuthenticationTokenProvider.cs" />
     <Compile Include="Token\SSOAuthorizationServerProvider.cs" />
   </ItemGroup>
@@ -185,10 +184,6 @@
     <ProjectReference Include="..\Kernel\Kernel.Configuration\Kernel.Configuration.csproj">
       <Project>{B78BEABA-813A-4C65-BA17-2207E5F37B66}</Project>
       <Name>Kernel.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Kernel\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{857217F2-B265-4154-883F-568285643238}</Project>
-      <Name>Kernel.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
       <Project>{47FE8E9F-CCF6-46B7-BA75-CBA1D1F56D7A}</Project>

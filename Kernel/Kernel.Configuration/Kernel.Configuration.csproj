@@ -64,7 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kernel.Cryptography\Kernel.Cryptography.csproj">
-      <Project>{857217F2-B265-4154-883F-568285643238}</Project>
+      <Project>{06c00fa7-3b59-472b-9c9a-bc4e44bb62fe}</Project>
       <Name>Kernel.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\Kernel.Reflection\Kernel.Reflection.csproj">
