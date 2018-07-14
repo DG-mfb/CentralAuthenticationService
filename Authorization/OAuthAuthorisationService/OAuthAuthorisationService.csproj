@@ -75,7 +75,7 @@
       <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Authentication\Kernel.Authentication.csproj">
-      <Project>{9492C7B7-6584-4FFF-A68F-8F0AEFD8077E}</Project>
+      <Project>{1A84B7BB-ABAF-401C-BCA0-6066A54DDC22}</Project>
       <Name>Kernel.Authentication</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Authorisation\Kernel.Authorisation.csproj">

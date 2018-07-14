@@ -96,10 +96,6 @@
     <Folder Include="Federtion\Binging\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Kernel\Kernel.Authentication\Kernel.Authentication.csproj">
-      <Project>{9492C7B7-6584-4FFF-A68F-8F0AEFD8077E}</Project>
-      <Name>Kernel.Authentication</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Configuration\Kernel.Configuration.csproj">
       <Project>{b78beaba-813a-4c65-ba17-2207e5f37b66}</Project>
       <Name>Kernel.Configuration</Name>
