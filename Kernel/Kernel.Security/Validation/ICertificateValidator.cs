@@ -1,5 +1,4 @@
-﻿using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel.Security;
 
 namespace Kernel.Security.Validation

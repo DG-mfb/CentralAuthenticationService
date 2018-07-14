@@ -91,7 +91,7 @@
       <Name>Kernel.Reflection</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Security\Kernel.Security.csproj">
-      <Project>{7C4225E8-700D-4FEE-9BBB-28A935364F05}</Project>
+      <Project>{2EFAB4B5-EA19-43D7-AF82-733FFE35CF32}</Project>
       <Name>Kernel.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel\Kernel.csproj">
