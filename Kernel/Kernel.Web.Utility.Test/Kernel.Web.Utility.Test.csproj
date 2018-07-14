@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kernel.Web\Kernel.Web.csproj">
-      <Project>{9653c064-54c1-41b6-b34c-8af2dc747c65}</Project>
+      <Project>{03af9ab0-8b79-45d0-87e7-441d013b8bb3}</Project>
       <Name>Kernel.Web</Name>
     </ProjectReference>
   </ItemGroup>

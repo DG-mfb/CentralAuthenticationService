@@ -77,7 +77,7 @@
       <Name>Kernel.Security</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Web\Kernel.Web.csproj">
-      <Project>{9653C064-54C1-41B6-B34C-8AF2DC747C65}</Project>
+      <Project>{03AF9AB0-8B79-45D0-87E7-441D013B8BB3}</Project>
       <Name>Kernel.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel\Kernel.csproj">
