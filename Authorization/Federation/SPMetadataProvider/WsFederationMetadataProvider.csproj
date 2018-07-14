@@ -71,7 +71,7 @@
       <Name>MemoryCacheProvider</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Infrastructure\Shared\Shared.csproj">
-      <Project>{fa2cd1bf-a890-4306-9edb-a1b10042e57e}</Project>
+      <Project>{905D5EB3-14AF-433E-AE53-4F39D2756A28}</Project>
       <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
@@ -97,10 +97,6 @@
     <ProjectReference Include="..\..\..\Serialisation\WsMetadataSerialisation\WsMetadataSerialisation.csproj">
       <Project>{D63B92B8-863B-493D-8117-0960DB06B554}</Project>
       <Name>WsMetadataSerialisation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Federation.Protocols\Federation.Protocols.csproj">
-      <Project>{33862A55-E53A-45EF-85C4-A9E1DEF4181C}</Project>
-      <Name>Federation.Protocols</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -78,7 +78,7 @@
       <Name>Microsoft.Owin.CertificateValidators</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\Serialisation\Serialisation.JSON\Serialisation.JSON.csproj">
-      <Project>{4eb8ab3b-2e70-410f-aa9b-8f1c9490fa3a}</Project>
+      <Project>{3F65EF33-A887-4E68-A030-962354F2C7D7}</Project>
       <Name>Serialisation.JSON</Name>
     </ProjectReference>
     <ProjectReference Include="..\ClassLibrary1\InlineMetadataContextProvider.csproj">

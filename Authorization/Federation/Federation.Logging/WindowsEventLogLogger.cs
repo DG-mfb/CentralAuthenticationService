@@ -40,7 +40,8 @@ namespace Federation.Logging
 
         public bool TryLogException(Exception ex, out Exception result)
         {
-            throw new NotImplementedException();
+            result = ex;
+            return true;
         }
 
         //public override void LogMessage(string m)

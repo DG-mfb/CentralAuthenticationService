@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IdentityModel.Metadata;
 using Kernel.Federation.Protocols;
-using Shared.Federtion.Models;
 
 namespace Shared.Federtion
 {

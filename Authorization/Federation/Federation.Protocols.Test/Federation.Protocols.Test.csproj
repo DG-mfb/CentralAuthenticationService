@@ -101,10 +101,6 @@
       <Project>{E43F61D6-1957-48E8-9D1A-5B55B736C09E}</Project>
       <Name>DeflateCompression</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Infrastructure\Shared\Shared.csproj">
-      <Project>{FA2CD1BF-A890-4306-9EDB-A1B10042E57E}</Project>
-      <Name>Shared</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Compression\Kernel.Compression.csproj">
       <Project>{62B9DBC7-C71F-4D38-AD32-54CA2F274FD6}</Project>
       <Name>Kernel.Compression</Name>
@@ -133,14 +129,6 @@
       <Project>{A445B83F-A70E-4C45-B4A1-2A8AB696FA6B}</Project>
       <Name>Kernel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Serialisation\Serialisation.JSON\Serialisation.JSON.csproj">
-      <Project>{4EB8AB3B-2E70-410F-AA9B-8F1C9490FA3A}</Project>
-      <Name>Serialisation.JSON</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Serialisation\Serialisation.Xml\Serialisation.Xml.csproj">
-      <Project>{CAAA3B30-55E9-4F50-8F09-89CA54DF9614}</Project>
-      <Name>Serialisation.Xml</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Serialisation\WsMetadataSerialisation\WsMetadataSerialisation.csproj">
       <Project>{D63B92B8-863B-493D-8117-0960DB06B554}</Project>
       <Name>WsMetadataSerialisation</Name>
@@ -152,10 +140,6 @@
     <ProjectReference Include="..\Federation.Metadata.Consumer\Federation.Metadata.FederationPartner.csproj">
       <Project>{EEC53E9A-3970-4EEC-8FFC-6B1AEA371A77}</Project>
       <Name>Federation.Metadata.FederationPartner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Federation.Protocols\Federation.Protocols.csproj">
-      <Project>{33862A55-E53A-45EF-85C4-A9E1DEF4181C}</Project>
-      <Name>Federation.Protocols</Name>
     </ProjectReference>
     <ProjectReference Include="..\SecurityManagement\SecurityManagement.csproj">
       <Project>{F194D759-AE81-488C-8230-EF63836B44C9}</Project>
