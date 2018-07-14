@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Kernel.DependancyResolver;
-using Kernel.Reflection;
 using Kernel.Validation;
 
 namespace Federation.Protocols.Response.Validation.ValidationRules

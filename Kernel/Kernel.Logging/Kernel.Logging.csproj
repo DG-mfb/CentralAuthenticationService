@@ -60,10 +60,6 @@
       <Project>{b78beaba-813a-4c65-ba17-2207e5f37b66}</Project>
       <Name>Kernel.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Kernel.Reflection\Kernel.Reflection.csproj">
-      <Project>{2A6BA5FB-DBAA-457A-9CB3-9BA74A96551B}</Project>
-      <Name>Kernel.Reflection</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Kernel\Kernel.csproj">
       <Project>{A445B83F-A70E-4C45-B4A1-2A8AB696FA6B}</Project>
       <Name>Kernel</Name>

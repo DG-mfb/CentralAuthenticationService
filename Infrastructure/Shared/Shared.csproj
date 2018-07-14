@@ -108,10 +108,6 @@
       <Project>{47FE8E9F-CCF6-46B7-BA75-CBA1D1F56D7A}</Project>
       <Name>Kernel.Federation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Kernel\Kernel.Reflection\Kernel.Reflection.csproj">
-      <Project>{2a6ba5fb-dbaa-457a-9cb3-9ba74a96551b}</Project>
-      <Name>Kernel.Reflection</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Kernel\Kernel.Security\Kernel.Security.csproj">
       <Project>{7C4225E8-700D-4FEE-9BBB-28A935364F05}</Project>
       <Name>Kernel.Security</Name>

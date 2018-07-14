@@ -68,7 +68,7 @@
       <Name>Kernel.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\Kernel.Reflection\Kernel.Reflection.csproj">
-      <Project>{2a6ba5fb-dbaa-457a-9cb3-9ba74a96551b}</Project>
+      <Project>{05DE06E5-C85B-4752-BEAE-002B92CA224E}</Project>
       <Name>Kernel.Reflection</Name>
     </ProjectReference>
     <ProjectReference Include="..\Kernel\Kernel.csproj">

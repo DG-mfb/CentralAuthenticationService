@@ -4,13 +4,11 @@ using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using Kernel.Extensions;
 
 namespace Kernel.Reflection.Extensions
 {
-	public static class TypeExtensions
+    public static class TypeExtensions
 	{
 		private static IDictionary<Type, Delegate> tryParseDelegatesCahe = new Dictionary<Type, Delegate>();
         
