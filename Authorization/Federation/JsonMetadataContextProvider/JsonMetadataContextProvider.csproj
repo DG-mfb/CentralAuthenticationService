@@ -61,10 +61,6 @@
       <Project>{B78BEABA-813A-4C65-BA17-2207E5F37B66}</Project>
       <Name>Kernel.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Kernel\Kernel.Data\Kernel.Data.csproj">
-      <Project>{58F76882-5E21-452F-A070-76D468D6E27C}</Project>
-      <Name>Kernel.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\..\Kernel\Kernel.Federation\Kernel.Federation.csproj">
       <Project>{47FE8E9F-CCF6-46B7-BA75-CBA1D1F56D7A}</Project>
       <Name>Kernel.Federation</Name>

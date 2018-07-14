@@ -174,7 +174,7 @@
       <Name>Kernel.Cryptography</Name>
     </ProjectReference>
     <ProjectReference Include="..\Kernel.Data\Kernel.Data.csproj">
-      <Project>{58F76882-5E21-452F-A070-76D468D6E27C}</Project>
+      <Project>{3CE7FFD5-9F8C-4AF4-9855-67616B4862CC}</Project>
       <Name>Kernel.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Kernel.Security\Kernel.Security.csproj">
