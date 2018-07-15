@@ -48,10 +48,11 @@ namespace SSOOwinMiddleware.Handlers
                 {
                     var relayState = new Dictionary<string, object> { { RelayStateContstants.FederationPartyId, ticket.Properties.Dictionary[RelayStateContstants.FederationPartyId] } };
                     AuthenticationTokenCreateContext context;
-                    var tokenCreated = this.TryCreateToken(ticket, relayState, out context);
+                    AuthorizationServerConfiguration configuration;
+                    var tokenCreated = this.TryCreateToken(ticket, relayState, out context, out configuration);
                     if (tokenCreated && !String.IsNullOrWhiteSpace(context.Token))
                     {
-                        var complete = await this.TryTokenEndpointResponse(context, relayState);
+                        var complete = await this.TryTokenEndpointResponse(context, relayState, configuration);
 
                         return complete;
                     }
@@ -241,17 +242,17 @@ namespace SSOOwinMiddleware.Handlers
             }
         }
 
-        private async Task<bool> TryTokenEndpointResponse(AuthenticationTokenCreateContext context, IDictionary<string, object> relayState)
+        private async Task<bool> TryTokenEndpointResponse(AuthenticationTokenCreateContext context, IDictionary<string, object> relayState, AuthorizationServerConfiguration configuration)
         {
             IAuthorizationServerProvider authorizationServerProvider;
             if (!this._resolver.TryResolve<IAuthorizationServerProvider>(out authorizationServerProvider))
                 return false;
-            var sSOTokenEndpointResponseContext = new SSOTokenEndpointResponseContext(base.Context, base.Options, context.Token, context.Ticket, relayState);
+            var sSOTokenEndpointResponseContext = new SSOTokenEndpointResponseContext(base.Context, base.Options, context.Token, context.Ticket, relayState, configuration);
             await authorizationServerProvider.TokenEndpointResponse(sSOTokenEndpointResponseContext);
             return sSOTokenEndpointResponseContext.IsRequestCompleted;
         }
 
-        private bool TryCreateToken(AuthenticationTicket ticket, IDictionary<string, object> relayState, out AuthenticationTokenCreateContext context)
+        private bool TryCreateToken(AuthenticationTicket ticket, IDictionary<string, object> relayState, out AuthenticationTokenCreateContext context, out AuthorizationServerConfiguration configuration)
         {
             context = null;
             if (!relayState.ContainsKey(RelayStateContstants.FederationPartyId))
@@ -261,7 +262,7 @@ namespace SSOOwinMiddleware.Handlers
             var configurationManager = this._resolver.Resolve<IConfigurationManager<AuthorizationServerConfiguration>>();
             var configurationTask = configurationManager.GetConfigurationAsync(federationPartyId, CancellationToken.None);
             configurationTask.Wait();
-            var configuration = configurationTask.Result;
+            configuration = configurationTask.Result;
 
             //if no configuration for the parner return, no need to throw an exception.
             if (configuration == null || !configuration.CreateToken)
