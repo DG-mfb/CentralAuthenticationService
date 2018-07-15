@@ -159,6 +159,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialisation.Xml", "Serial
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialisation.JSON", "Serialisation\Serialisation.JSON\Serialisation.JSON.csproj", "{3F65EF33-A887-4E68-A030-962354F2C7D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebNetCoreClient", "Web\WebNetCoreClient\WebNetCoreClient.csproj", "{E2FBD55A-9453-4F8C-A4DA-6DCD4816A09E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -409,6 +411,10 @@ Global
 		{3F65EF33-A887-4E68-A030-962354F2C7D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F65EF33-A887-4E68-A030-962354F2C7D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F65EF33-A887-4E68-A030-962354F2C7D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2FBD55A-9453-4F8C-A4DA-6DCD4816A09E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2FBD55A-9453-4F8C-A4DA-6DCD4816A09E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2FBD55A-9453-4F8C-A4DA-6DCD4816A09E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2FBD55A-9453-4F8C-A4DA-6DCD4816A09E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -479,6 +485,7 @@ Global
 		{905D5EB3-14AF-433E-AE53-4F39D2756A28} = {11854441-8BA2-4F92-876A-C21E1C392328}
 		{3B278E98-8E5D-4721-89E3-A29F882C18D5} = {0AFE6D2B-E3B2-455F-9776-70D5C39629A4}
 		{3F65EF33-A887-4E68-A030-962354F2C7D7} = {0AFE6D2B-E3B2-455F-9776-70D5C39629A4}
+		{E2FBD55A-9453-4F8C-A4DA-6DCD4816A09E} = {5D045FCD-BBE8-4543-B16B-00C8579E6861}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2E4F5021-8BA2-4CB0-959B-4E49D190605D}
