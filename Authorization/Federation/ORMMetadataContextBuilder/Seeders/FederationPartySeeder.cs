@@ -54,7 +54,7 @@ namespace ORMMetadataContextProvider.Seeders
             {
                 RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
                 AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-                MetadataPath = "",
+                MetadataPath = "https://www.testshib.org/metadata/testshib-providers.xml",
                 MetadataLocation = "HTTP",
                 FederationPartyId = "testshib"
             };
