@@ -35,5 +35,12 @@ namespace WebNetCoreClient.Controllers
         {
             return Redirect(String.Format("https://localhost:44316/account/sso?clientId={0}", client));
         }
+
+        [HttpGet]
+        [Route("login", Name = "Login")]
+        public ActionResult<IActionResult> Login()
+        {
+            return Ok("Redirect to Glasswall login page.");
+        }
     }
 }
