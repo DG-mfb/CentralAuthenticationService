@@ -39,7 +39,7 @@ namespace WebApi.Token
                 var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
                 var jwt = jwtSecurityTokenHandler.CreateEncodedJwt("https://www.glasswall-dev.com", "https://www.glasswall-dev.com", identity, properties.IssuedUtc.GetValueOrDefault().DateTime, properties.ExpiresUtc.GetValueOrDefault().DateTime, properties.IssuedUtc.GetValueOrDefault().DateTime , signingCredentials, null);
                 var redirectUri = sSOTokenEndpointResponseContext.Configuration.TokenResponseUrl;
-                var uri = String.Format("{0}api/values?token={1}", redirectUri.AbsoluteUri, jwt);
+                var uri = String.Format("{0}api/account?token={1}", redirectUri.AbsoluteUri, jwt);
                 sSOTokenEndpointResponseContext.Response.Redirect(uri);
                 context.RequestCompleted();
             }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Diagnostics;
+using Kernel.Extensions;
 using Kernel.Logging;
 
 namespace Federation.Logging
@@ -9,7 +11,6 @@ namespace Federation.Logging
         public WindowsEventLogLogger(ILogWriter logWriter)
         {
             this._logWriter = logWriter;
-            //base.LogWriter = logWriter;
         }
 
         public ILogWriter LogWriter
@@ -40,13 +41,10 @@ namespace Federation.Logging
 
         public bool TryLogException(Exception ex, out Exception result)
         {
+            var details = ExceptionExtensions.BuildExceptionStringRecursively(ex);
+            Debug.WriteLine(details);
             result = ex;
             return true;
         }
-
-        //public override void LogMessage(string m)
-        //{
-        //    LoggerManager.WriteInformationToEventLog(m);
-        //}
     }
 }

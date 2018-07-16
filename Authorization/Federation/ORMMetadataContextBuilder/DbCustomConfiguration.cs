@@ -11,7 +11,7 @@ namespace ORMMetadataContextProvider
         {
             this.Seeders = new List<ISeeder>();
             //ToDo: Review
-            this.Schema = "dbo";//AppSettingsConfigurationManager.GetSetting("ssoSchema", "dbo");
+            this.Schema = "sso";//AppSettingsConfigurationManager.GetSetting("ssoSchema", "dbo");
         }
         public ICollection<ISeeder> Seeders { get; }
 

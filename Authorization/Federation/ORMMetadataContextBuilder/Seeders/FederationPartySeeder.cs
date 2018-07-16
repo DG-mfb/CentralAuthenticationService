@@ -54,26 +54,26 @@ namespace ORMMetadataContextProvider.Seeders
             {
                 RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
                 AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-                MetadataPath = "https://www.testshib.org/metadata/testshib-providers.xml",
+                MetadataPath = "",
                 MetadataLocation = "HTTP",
-                FederationPartyId = "local"
+                FederationPartyId = "testshib"
             };
             testFederationParty.MetadataSettings = metadata;
             testFederationParty.SecuritySettings = security;
             testFederationParty.AutnRequestSettings = authnRequestSettings;
 
             //local
-            //var localFederationParty = new FederationPartySettings
-            //{
-            //    RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
-            //    AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
-            //    MetadataPath = "https://dg-mfb/idp/shibboleth",
-            //    MetadataLocation = "HTTP",
-            //    FederationPartyId = "local"
-            //};
-            //localFederationParty.MetadataSettings = metadata;
-            //localFederationParty.SecuritySettings = security;
-            //localFederationParty.AutnRequestSettings = authnRequestSettings;
+            var localFederationParty = new FederationPartySettings
+            {
+                RefreshInterval = new DatepartValue { Value = 30, Datepart = Datapart.Second },
+                AutoRefreshInterval = new DatepartValue { Value = 1, Datepart = Datapart.Day },
+                MetadataPath = "https://gw-srv-dc03.gw.local/FederationMetadata/2007-06/FederationMetadata.xml",
+                MetadataLocation = "HTTP",
+                FederationPartyId = "local"
+            };
+            localFederationParty.MetadataSettings = metadata;
+            localFederationParty.SecuritySettings = security;
+            localFederationParty.AutnRequestSettings = authnRequestSettings;
 
             //local identity provider
             //var localIdp = new FederationPartySettings
@@ -90,17 +90,17 @@ namespace ORMMetadataContextProvider.Seeders
 
             //context.Add<FederationPartySettings>(imperialFederationParty);
             context.Add<FederationPartySettings>(testFederationParty);
-            //context.Add<FederationPartySettings>(localFederationParty);
+            context.Add<FederationPartySettings>(localFederationParty);
             //context.Add<FederationPartySettings>(atlasFederationParty);
 
             //metadata.RelyingParties.Add(imperialFederationParty);
-            //metadata.RelyingParties.Add(localFederationParty);
+            metadata.RelyingParties.Add(localFederationParty);
             metadata.RelyingParties.Add(testFederationParty);
             //metadata.RelyingParties.Add(localIdp);
             //metadata.RelyingParties.Add(atlasFederationParty);
 
             //security.RelyingParties.Add(imperialFederationParty);
-            //security.RelyingParties.Add(localFederationParty);
+            security.RelyingParties.Add(localFederationParty);
             security.RelyingParties.Add(testFederationParty);
             //security.RelyingParties.Add(localIdp);
             //security.RelyingParties.Add(atlasFederationParty);
