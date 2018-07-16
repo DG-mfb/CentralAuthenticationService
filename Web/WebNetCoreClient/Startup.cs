@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,26 +30,44 @@ namespace WebNetCoreClient
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string key = "401b09eab3c013d4ca54922bb802bec8fd50a75f201d8b3727429090fb337591abd3e44453b954555b7a0812e1081c39b740293f765eae731f5a65ed1";
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
+            
             AuthenticationServiceCollectionExtensions.AddAuthentication(services, JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
-                    //options.Audience = "https://www.glasswall-dev.com";
-                    //options.Authority = "https://www.glasswall-dev.com";
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = false,
-                        ValidateAudience = false,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = false,
-                        //ValidIssuer = Configuration["Jwt:Issuer"],
-                        //ValidAudience = Configuration["Jwt:Issuer"],
-                        //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
+                        ValidateAudience = true,
+                        ValidateLifetime = false,
+                        ValidateIssuerSigningKey = true,
+                        ValidAudience = Configuration["Jwt:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = c =>
+                        {
+                            var token = c.Request.Query["token"];
+                            if(token.Any())
+                                c.Token = token;
+                            return Task.CompletedTask;
+                        },
+                        OnTokenValidated = c =>
+                        {
+                            c.Success();
+                            return Task.CompletedTask;
+                        },
+                        OnAuthenticationFailed = c =>
+                        {
+                            return Task.CompletedTask;
+                        }
                     };
                 });
-            services.AddMvc() 
+
+            services.AddMvc()
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +84,8 @@ namespace WebNetCoreClient
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            app.UseCors(b => b.AllowAnyOrigin().AllowAnyHeader());
+            app.UseAuthentication();
         }
     }
 }
