@@ -40,7 +40,7 @@ namespace WebNetCoreClient.Controllers
         [Route("login", Name = "Login")]
         public ActionResult<IActionResult> Login()
         {
-            return Ok("Redirect to Glasswall login page.");
+            return Redirect("https://localhost:44342/client");
         }
     }
 }

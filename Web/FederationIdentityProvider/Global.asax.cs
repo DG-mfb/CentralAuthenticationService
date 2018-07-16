@@ -30,7 +30,7 @@ namespace FederationIdentityProvider
                 var container = ApplicationConfiguration.Instance.DependencyResolver;
                 DIRegistration.Register(container);
                 var initialiser = ApplicationConfiguration.Instance.ServerInitialiserFactory();
-                var dataSource = AppSettingsConfigurationManager.GetSetting("dataInitialiser", String.Empty);
+                var dataSource = "ORMMetadataContextProvider.Initialisation.ORMMetadataContextProviderInitialiser, ORMMetadataContextProvider, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null";
                 if (!String.IsNullOrWhiteSpace(dataSource))
                     initialiser.InitialiserTypes.Add(dataSource);
                 var task = initialiser.Initialise(container);
