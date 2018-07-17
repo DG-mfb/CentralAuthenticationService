@@ -23,6 +23,7 @@ namespace WebNetCoreClient
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddCookie()
                 .AddJwtBearer(options =>
@@ -59,7 +60,6 @@ namespace WebNetCoreClient
 
             services.AddMvc()
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,10 +73,9 @@ namespace WebNetCoreClient
             {
                 app.UseHsts();
             }
-
+            app.UseCors(b => b.AllowAnyOrigin());
             app.UseHttpsRedirection();
             app.UseMvc();
-            app.UseCors(b => b.AllowAnyOrigin().AllowAnyHeader());
             app.UseAuthentication();
         }
     }

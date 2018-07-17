@@ -39,10 +39,10 @@ namespace WebNetCoreClient.Controllers
         }
 
         [HttpGet]
-        [Route("home", Name = "Home")]
-        public async Task<IActionResult> Home()
+        [Route("user", Name = "User")]
+        public async Task<IActionResult> User()
         {
-            return Ok();
+            return Ok(new { Id = Guid.NewGuid(), UserName = "JohnDoe@domain.com", Forename = "John", Surname = "Doe" });
         }
     }
 }

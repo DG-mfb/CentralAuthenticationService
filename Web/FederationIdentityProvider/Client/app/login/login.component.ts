@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         var currentUser = localStorage.getItem("currentUser");
         if (currentUser) {
             localStorage.removeItem('currentUser');
-            this.document.location.href = 'https://localhost:44382/api/account/logout'
+            //this.document.location.href = 'https://localhost:44382/api/account/logout'
         }
         this.token = this.route.snapshot.queryParams['token'];
         if (this.token) {
@@ -63,6 +63,6 @@ export class LoginComponent implements OnInit {
 			});
     }
     sso() {
-        this.document.location.href = 'https://localhost:44316/account/sso?clientId=testshib';
+        this.document.location.href = 'https://localhost:44316/account/sso?clientId=local';
     }
 }

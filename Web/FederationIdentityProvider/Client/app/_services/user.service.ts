@@ -5,10 +5,15 @@ import { User } from '../_models/index';
 
 @Injectable()
 export class UserService {
+   
     constructor(private http: Http) { }
 
+    getCurrentUserDetails() {
+        return this.http.get('https://localhost:44397/api/account/user', this.jwt()).map((response: Response) => response.json());
+    }
+
     getAll() {
-        return this.http.get('/api/users', this.jwt()).map((response: Response) => response.json());
+        return this.http.get('/api/account/userDetails', this.jwt()).map((response: Response) => response.json());
     }
 
     getById(id: number) {
@@ -32,8 +37,9 @@ export class UserService {
     private jwt() {
         // create authorization header with jwt token
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if (currentUser && currentUser.token) {
-            let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.token });
+        if (currentUser && currentUser.access_token) {
+            let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.access_token });
+            headers.append("Access-Control-Allow-Origin", "*");
             return new RequestOptions({ headers: headers });
         }
     }
