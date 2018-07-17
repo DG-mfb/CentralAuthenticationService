@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     loading = false;
 	returnUrl: string;
 	state: string;
-
+    token: string;
 	constructor( @Inject(DOCUMENT) private document: any,
 		private route: ActivatedRoute,
 		private userService: UserService,
@@ -25,8 +25,19 @@ export class LoginComponent implements OnInit {
         private alertService: AlertService) { }
 
     ngOnInit() {
+        var currentUser = localStorage.getItem("currentUser");
+        if (currentUser) {
+            localStorage.removeItem('currentUser');
+            this.document.location.href = 'https://localhost:44382/api/account/logout'
+        }
+        this.token = this.route.snapshot.queryParams['token'];
+        if (this.token) {
+
+            localStorage.setItem("currentUser", JSON.stringify({ access_token: this.token }));
+            this.router.navigate(['']);
+        }
         // reset login status
-		this.authenticationService.logout();
+		//this.authenticationService.logout();
         // get return url from route parameters or default to '/'
 		this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
 		this.state = this.route.snapshot.queryParams['state'] || '/';
