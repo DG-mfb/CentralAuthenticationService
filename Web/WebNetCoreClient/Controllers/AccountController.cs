@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -12,9 +15,11 @@ namespace WebNetCoreClient.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IActionResult> Get()
+        public async Task<IActionResult> Get()
         {
+            //await AuthenticationHttpContextExtensions.SignInAsync(HttpContext, "Cookies", base.User);
             return Ok();
+            //return Redirect("https://localhost:44397/api/account/home");
         }
 
         [HttpGet]
@@ -31,6 +36,13 @@ namespace WebNetCoreClient.Controllers
         public ActionResult<IActionResult> Login()
         {
             return Redirect("https://localhost:44342/client");
+        }
+
+        [HttpGet]
+        [Route("home", Name = "Home")]
+        public async Task<IActionResult> Home()
+        {
+            return Ok();
         }
     }
 }
