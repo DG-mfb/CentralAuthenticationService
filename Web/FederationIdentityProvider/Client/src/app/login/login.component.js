@@ -8,12 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var AuthenticationService_1 = require("../services/AuthenticationService");
+var platform_browser_1 = require("@angular/platform-browser");
 var LoginComponent = /** @class */ (function () {
-    function LoginComponent(route, router, authenticationService) {
+    function LoginComponent(document, route, router, authenticationService) {
+        this.document = document;
         this.route = route;
         this.router = router;
         this.authenticationService = authenticationService;
@@ -51,6 +56,9 @@ var LoginComponent = /** @class */ (function () {
         //        this.showWarningMessage = false;
         //    });
     };
+    LoginComponent.prototype.sso = function () {
+        this.document.location.href = '"https://localhost:44316/account/sso?clientId=testshib&&redirectUrl=https://localhost:44342/';
+    };
     LoginComponent.prototype.clearMessages = function () {
         this.showWarningMessage = false;
         this.showErrorMessage = false;
@@ -63,7 +71,8 @@ var LoginComponent = /** @class */ (function () {
             providers: [AuthenticationService_1.AuthenticationService],
             styleUrls: ['login.component.css']
         }),
-        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        __param(0, core_1.Inject(platform_browser_1.DOCUMENT)),
+        __metadata("design:paramtypes", [Object, router_1.ActivatedRoute,
             router_1.Router,
             AuthenticationService_1.AuthenticationService])
     ], LoginComponent);

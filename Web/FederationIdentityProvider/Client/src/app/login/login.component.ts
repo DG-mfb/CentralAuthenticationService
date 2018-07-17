@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AuthenticationService } from '../services/AuthenticationService';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
     moduleId: module.id,
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit
 	loading = false;
 	model: any = {};
 	returnUrl: string;
-	constructor(
+    constructor(@Inject(DOCUMENT) private document: any,
 		private route: ActivatedRoute,
         private router: Router,
 		private authenticationService: AuthenticationService)
@@ -58,7 +59,9 @@ export class LoginComponent implements OnInit
         //        this.showWarningMessage = false;
         //    });
     }
-
+    sso() {
+        this.document.location.href = '"https://localhost:44316/account/sso?clientId=testshib&&redirectUrl=https://localhost:44342/';
+    }
     private clearMessages(): void {
         this.showWarningMessage = false;
         this.showErrorMessage = false;

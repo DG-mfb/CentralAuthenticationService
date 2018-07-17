@@ -17,4 +17,5 @@
             <a [routerLink]="['/register']" class="btn btn-link">Register</a>
         </div>
     </form>
+    <button [disabled]="loading" (click)="sso()" class="btn btn-primary">SSO</button>
 </div>
