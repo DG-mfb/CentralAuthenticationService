@@ -38,10 +38,10 @@ export class HomeComponent implements OnInit {
     private loadCurrentUserDetails() {
         this.userService.getCurrentUserDetails().subscribe(user =>
         {
-            this.currentUser = new User();
-            this.currentUser = user.Forename;
-            this.currentUser = user.Surname;
-            this.currentUser = user.UserName;
+			//this.currentUser = new User();
+			this.currentUser.firstName = user.forename;
+			this.currentUser.lastName = user.surname;
+			this.currentUser.username = user.userName;
         });
     }
 }

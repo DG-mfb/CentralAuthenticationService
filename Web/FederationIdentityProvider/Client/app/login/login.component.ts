@@ -63,6 +63,6 @@ export class LoginComponent implements OnInit {
 			});
     }
     sso() {
-        this.document.location.href = 'https://localhost:44316/account/sso?clientId=local';
+        this.document.location.href = 'https://localhost:44316/account/sso?clientId=testshib';
     }
 }

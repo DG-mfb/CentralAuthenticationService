@@ -39,7 +39,7 @@ export class UserService {
         let currentUser = JSON.parse(localStorage.getItem('currentUser'));
         if (currentUser && currentUser.access_token) {
             let headers = new Headers({ 'Authorization': 'Bearer ' + currentUser.access_token });
-            headers.append("Access-Control-Allow-Origin", "*");
+            //headers.append("Access-Control-Allow-Origin", "*");
             return new RequestOptions({ headers: headers });
         }
     }
