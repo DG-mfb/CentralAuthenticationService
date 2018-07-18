@@ -18,8 +18,8 @@ import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { UserManagement } from './UserManagement/userManagement.component';
-//import { ResetPassword } from './UserManagement';
-//import { UserManagement, ResetPassword } from './UserManagement';
+//import { ResetPassword } from './UserManagement/userManagement.resetpassword.component';
+import { EqualValidator } from './Validators/equal-validator';
 
 @NgModule({
     imports: [
@@ -35,7 +35,8 @@ import { UserManagement } from './UserManagement/userManagement.component';
         LoginComponent,
         RegisterComponent,
         UserManagement,
-        //ResetPassword
+        //ResetPassword,
+        EqualValidator
     ],
     providers: [
         AuthGuard,

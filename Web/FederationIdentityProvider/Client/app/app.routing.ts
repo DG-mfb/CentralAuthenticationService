@@ -5,8 +5,7 @@ import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
 import { AuthGuard } from './_guards/index';
 import { UserManagement } from './UserManagement/userManagement.component';
-//import { ResetPassword } from './UserManagement';
-//import { UserManagement, ResetPassword } from './UserManagement';
+//import { ResetPassword } from './UserManagement/userManagement.resetpassword.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },

@@ -215,6 +215,7 @@
     <TypeScriptCompile Include="Client\app\UserManagement\index.ts" />
     <TypeScriptCompile Include="Client\app\UserManagement\userManagement.component.ts" />
     <TypeScriptCompile Include="Client\app\UserManagement\userManagement.resetpassword.component.ts" />
+    <TypeScriptCompile Include="Client\app\Validators\equal-validator.ts" />
     <TypeScriptCompile Include="Client\app\_directives\alert.component.ts" />
     <TypeScriptCompile Include="Client\app\_directives\index.ts" />
     <TypeScriptCompile Include="Client\app\_guards\auth.guard.ts" />

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var login_component_1 = require("./login/login.component");
 var HomeComponent_1 = require("./Home/HomeComponent");
 var AuthGuard_1 = require("./Guards/AuthGuard");

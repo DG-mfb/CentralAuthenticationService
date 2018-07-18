@@ -11,11 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var AuthenticationService_1 = require("../services/AuthenticationService");
 var platform_browser_1 = require("@angular/platform-browser");
-var LoginComponent = (function () {
+var LoginComponent = /** @class */ (function () {
     function LoginComponent(document, route, router, authenticationService) {
         this.document = document;
         this.route = route;
@@ -62,20 +63,20 @@ var LoginComponent = (function () {
         this.showWarningMessage = false;
         this.showErrorMessage = false;
     };
+    LoginComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'login',
+            templateUrl: 'login.component.html',
+            providers: [AuthenticationService_1.AuthenticationService],
+            styleUrls: ['login.component.css']
+        }),
+        __param(0, core_1.Inject(platform_browser_1.DOCUMENT)),
+        __metadata("design:paramtypes", [Object, router_1.ActivatedRoute,
+            router_1.Router,
+            AuthenticationService_1.AuthenticationService])
+    ], LoginComponent);
     return LoginComponent;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'login',
-        templateUrl: 'login.component.html',
-        providers: [AuthenticationService_1.AuthenticationService],
-        styleUrls: ['login.component.css']
-    }),
-    __param(0, core_1.Inject(platform_browser_1.DOCUMENT)),
-    __metadata("design:paramtypes", [Object, router_1.ActivatedRoute,
-        router_1.Router,
-        AuthenticationService_1.AuthenticationService])
-], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
