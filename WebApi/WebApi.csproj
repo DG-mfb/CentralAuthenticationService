@@ -145,6 +145,7 @@
     <Compile Include="Resolvers\OwinSamlLogoutContextResolver.cs" />
     <Compile Include="Results\CookieRedirectResult.cs" />
     <Compile Include="Token\ClientTokenGrantService.cs" />
+    <Compile Include="Token\JSonDataFormat.cs" />
     <Compile Include="Token\SSOAuthenticationTokenProvider.cs" />
     <Compile Include="Token\SSOAuthorizationServerProvider.cs" />
   </ItemGroup>

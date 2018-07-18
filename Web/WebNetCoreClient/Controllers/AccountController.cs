@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebNetCoreClient.Controllers
 {
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize()]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase

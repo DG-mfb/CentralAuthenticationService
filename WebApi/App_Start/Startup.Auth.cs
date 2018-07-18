@@ -7,6 +7,7 @@ using Owin;
 using SLOOwinMiddleware.Extensions;
 using SSOOwinMiddleware.Extensions;
 using System.Threading.Tasks;
+using WebApi.Token;
 
 namespace WebApi
 {
@@ -53,7 +54,9 @@ namespace WebApi
             //OAuth2 bearer token middleware
             var resolver = ApplicationConfiguration.Instance.DependencyResolver;
             var optionProvider = resolver.Resolve<IAuthorizationServerOptionsProvider<OAuthAuthorizationServerOptions>>();
-            OAuthOptions = optionProvider.GetOptions();
+            var options = optionProvider.GetOptions();
+            options.AccessTokenFormat = new JSonDataFormat();
+            Startup.OAuthOptions = options;
 
             // Enable the application to use bearer tokens to authenticate users
             app.UseOAuthBearerTokens(OAuthOptions);

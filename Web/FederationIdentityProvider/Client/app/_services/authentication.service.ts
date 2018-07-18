@@ -12,7 +12,7 @@ export class AuthenticationService {
 		headers.append('Content-Type', 'application/x-www-form-urlencoded');
 		let options = new RequestOptions({ headers: headers });
 		var content = "grant_type=" + "password" + "&username=" + username + "&password=" + password;
-		return this.http.post('/token', content, options)
+        return this.http.post('https://localhost:44316/token', content, options)
 			.map((response: Response) => {
 				let user = response.json();
 				if (user && user.access_token) {

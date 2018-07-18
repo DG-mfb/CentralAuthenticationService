@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kernel.Authorisation;
 using Kernel.DependancyResolver;
+using Kernel.Federation.Constants;
 using SSOOwinMiddleware.Contexts;
 
 namespace WebApi.Token
@@ -20,19 +21,22 @@ namespace WebApi.Token
             var sSOTokenEndpointResponseContext = context as SSOTokenEndpointResponseContext;
             if (sSOTokenEndpointResponseContext != null)
             {
-                string key = "401b09eab3c013d4ca54922bb802bec8fd50a75f201d8b3727429090fb337591abd3e44453b954555b7a0812e1081c39b740293f765eae731f5a65ed1";
-                var identity = sSOTokenEndpointResponseContext.Ticket.Identity;
-                var properties = sSOTokenEndpointResponseContext.Ticket.Properties;
-                var symmetricSecurityKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-                var signingCredentials = new Microsoft.IdentityModel.Tokens.SigningCredentials(symmetricSecurityKey, Microsoft.IdentityModel.Tokens.SecurityAlgorithms.HmacSha256Signature);
-                var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
-                var jwt = jwtSecurityTokenHandler.CreateEncodedJwt("https://www.glasswall-dev.com", "https://www.glasswall-dev.com", identity, properties.IssuedUtc.GetValueOrDefault().DateTime, properties.ExpiresUtc.GetValueOrDefault().DateTime, properties.IssuedUtc.GetValueOrDefault().DateTime , signingCredentials, null);
-                var redirectUri = sSOTokenEndpointResponseContext.Configuration.TokenResponseUrl;
-                //var uri = String.Format("{0}api/account?token={1}", redirectUri.AbsoluteUri, jwt);
-                var uri = String.Format("{0}?token={1}", redirectUri.AbsoluteUri, jwt);
+                var jSonDataFormat = new JSonDataFormat();
+                var token = jSonDataFormat.Protect(sSOTokenEndpointResponseContext.Ticket);
+                var redirectUri = this.ResolveReturnUrl(sSOTokenEndpointResponseContext);
+                var uri = String.Format("{0}?token={1}", redirectUri, token);
                 sSOTokenEndpointResponseContext.Response.Redirect(uri);
                 context.RequestCompleted();
             }
+        }
+
+        private string ResolveReturnUrl(SSOTokenEndpointResponseContext context)
+        {
+            object url;
+            var state = context.RelayState;
+            if (!state.TryGetValue(RelayStateContstants.RedirectUrl, out url))
+                url = context.Configuration.TokenResponseUrl;
+            return url.ToString();
         }
     }
 }
