@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var AuthGuard = /** @class */ (function () {
+var AuthGuard = (function () {
     function AuthGuard(router, route) {
         this.router = router;
         this.route = route;
@@ -27,11 +26,11 @@ var AuthGuard = /** @class */ (function () {
         this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
         return false;
     };
-    AuthGuard = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
-    ], AuthGuard);
     return AuthGuard;
 }());
+AuthGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
+], AuthGuard);
 exports.AuthGuard = AuthGuard;
 //# sourceMappingURL=AuthGuard.js.map

@@ -48,14 +48,15 @@ export class LoginComponent implements OnInit {
 		this.authenticationService.login(this.model.username, this.model.password)
 			.subscribe(
 			data => {
-				this.authenticationService.ssologin(data.access_token, this.returnUrl, this.state)
-					.subscribe(
-					d => {
-						//this.document.location.href = 'http://localhost:60879/api/Account/SSOLogon';
-						this.document.location.href = this.returnUrl + "?state=" + this.state;
-						//this.router.navigate(['this.returnUrl']);
-					})
-				//this.router.navigate([this.returnUrl]);
+				//this.authenticationService.ssologin(data.access_token, this.returnUrl, this.state)
+				//	.subscribe(
+				//	d => {
+				//		//this.document.location.href = 'http://localhost:60879/api/Account/SSOLogon';
+				//		//this.document.location.href = this.returnUrl + "?state=" + this.state;
+				//		//this.router.navigate(['this.returnUrl']);
+    //                    this.router.navigate(['*'])
+				//	})
+				this.router.navigate(['']);
 			},
 			error => {
 				this.alertService.error(error);
