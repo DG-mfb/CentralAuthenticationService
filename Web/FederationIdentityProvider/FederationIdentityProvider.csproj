@@ -113,19 +113,6 @@
     <Content Include="Client\app\register\register.component.html" />
     <Content Include="Client\app\_directives\alert.component.html" />
     <Content Include="Client\index.html" />
-    <Content Include="Client\src\app\app.component.js" />
-    <Content Include="Client\src\app\app.component.spec.js" />
-    <Content Include="Client\src\app\app.module.js" />
-    <Content Include="Client\src\app\app.routing.js" />
-    <Content Include="Client\src\app\login\login.component.html" />
-    <Content Include="Client\src\app\login\login.component.js" />
-    <Content Include="Client\src\favicon.ico" />
-    <Content Include="Client\src\index.html" />
-    <Content Include="Client\src\main.js" />
-    <Content Include="Client\src\styles.css" />
-    <Content Include="Client\src\systemjs-angular-loader.js" />
-    <Content Include="Client\src\systemjs.config.extras.js" />
-    <Content Include="Client\src\systemjs.config.js" />
     <Content Include="Client\systemjs.config.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -143,16 +130,7 @@
     <Compile Include="RelyingPartyConfiguration\RelyingPartyContextBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Client\src\app\app.component.js.map" />
-    <Content Include="Client\src\app\app.component.spec.js.map" />
-    <Content Include="Client\src\app\app.module.js.map" />
-    <Content Include="Client\src\app\app.routing.js.map" />
-    <Content Include="Client\src\app\login\login.component.js.map" />
-    <Content Include="Client\src\app\login\login.component.css" />
-    <Content Include="Client\src\main.js.map" />
-    <Content Include="Client\src\tsconfig.json" />
     <Content Include="package.json" />
-    <Content Include="Client\src\app\Home\home.component.html" />
     <Content Include="Client\package.json" />
     <Content Include="Client\tsconfig.json" />
     <None Include="packages.config" />
@@ -244,15 +222,6 @@
     <TypeScriptCompile Include="Client\app\_services\authentication.service.ts" />
     <TypeScriptCompile Include="Client\app\_services\index.ts" />
     <TypeScriptCompile Include="Client\app\_services\user.service.ts" />
-    <TypeScriptCompile Include="Client\src\app\app.component.spec.ts" />
-    <TypeScriptCompile Include="Client\src\app\app.component.ts" />
-    <TypeScriptCompile Include="Client\src\app\app.module.ts" />
-    <TypeScriptCompile Include="Client\src\app\app.routing.ts" />
-    <TypeScriptCompile Include="Client\src\app\Guards\AuthGuard.ts" />
-    <TypeScriptCompile Include="Client\src\app\Home\HomeComponent.ts" />
-    <TypeScriptCompile Include="Client\src\app\login\login.component.ts" />
-    <TypeScriptCompile Include="Client\src\app\Services\AuthenticationService.ts" />
-    <TypeScriptCompile Include="Client\src\main.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
