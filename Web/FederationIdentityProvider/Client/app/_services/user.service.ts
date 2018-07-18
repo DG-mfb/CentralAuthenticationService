@@ -32,7 +32,22 @@ export class UserService {
         return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
     }
 
-    // private helper methods
+    resetPassword(name: string) {
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+        var content = JSON.stringify(name);
+        return this.http.post('/api/account/resetpassword', content, options).map((response: Response) => response.json());
+    }
+
+    updatePassword(password: string, confirmPassword: string, ticket: string) {
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({ headers: headers });
+        var content = JSON.stringify({ Name: name, Password: password, ConfirmPassword: confirmPassword, Ticket: ticket });
+        return this.http.post('/api/account/updatepassword', content, options).map((response: Response) => response.json());
+    }
+
 
     private jwt() {
         // create authorization header with jwt token

@@ -17,6 +17,9 @@ import { AlertService, AuthenticationService, UserService } from './_services/in
 import { HomeComponent } from './home/index';
 import { LoginComponent } from './login/index';
 import { RegisterComponent } from './register/index';
+import { UserManagement } from './UserManagement/userManagement.component';
+//import { ResetPassword } from './UserManagement';
+//import { UserManagement, ResetPassword } from './UserManagement';
 
 @NgModule({
     imports: [
@@ -30,7 +33,9 @@ import { RegisterComponent } from './register/index';
         AlertComponent,
         HomeComponent,
         LoginComponent,
-        RegisterComponent
+        RegisterComponent,
+        UserManagement,
+        //ResetPassword
     ],
     providers: [
         AuthGuard,

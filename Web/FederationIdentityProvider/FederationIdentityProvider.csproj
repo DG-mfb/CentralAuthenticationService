@@ -111,6 +111,8 @@
     <Content Include="Client\app\home\home.component.html" />
     <Content Include="Client\app\login\login.component.html" />
     <Content Include="Client\app\register\register.component.html" />
+    <Content Include="Client\app\UserManagement\userManagement.component.html" />
+    <Content Include="Client\app\UserManagement\userManagement.resetpassword.component.html" />
     <Content Include="Client\app\_directives\alert.component.html" />
     <Content Include="Client\index.html" />
     <Content Include="Client\systemjs.config.js" />
@@ -210,6 +212,9 @@
     <TypeScriptCompile Include="Client\app\main.ts" />
     <TypeScriptCompile Include="Client\app\register\index.ts" />
     <TypeScriptCompile Include="Client\app\register\register.component.ts" />
+    <TypeScriptCompile Include="Client\app\UserManagement\index.ts" />
+    <TypeScriptCompile Include="Client\app\UserManagement\userManagement.component.ts" />
+    <TypeScriptCompile Include="Client\app\UserManagement\userManagement.resetpassword.component.ts" />
     <TypeScriptCompile Include="Client\app\_directives\alert.component.ts" />
     <TypeScriptCompile Include="Client\app\_directives\index.ts" />
     <TypeScriptCompile Include="Client\app\_guards\auth.guard.ts" />
